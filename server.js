@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const connection=require('./config/db')
-const dotenv=require('dotenv')
 const bodyParser=require('body-parser')
 const cors=require('cors')
 app.use(cors())
@@ -11,12 +10,10 @@ app.use(express.urlencoded({ extended: false }))
 app.set("view engine", "ejs")
 
 
-dotenv.config()
-
-app.listen(process.env.port || 8000, (error)=>{
+app.listen(9000, (error)=>{
   if(error) throw error
 
-  console.log(`server listening port on ${process.env.port}`)
+  console.log(`server listening port on ${9000}`)
 });
 
 
